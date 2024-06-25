@@ -123,8 +123,6 @@ int WideCharToMultiByte(uint32_t /*CodePage*/, uint32_t /*dwFlags*/,
   if (prevLocale)
     setlocale(LC_ALL, prevLocale);
 
-  if (rv == (size_t)cchWideChar)
-    return rv;
   return rv + 1; // mbstowcs excludes the terminating character
 }
 #endif // _WIN32
